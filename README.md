@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/lpenz/gkrellm-sdnotify.svg?branch=master)](https://travis-ci.com/lpenz/gkrellm-sdnotify) 
 
 gkrellm-sdnotify
 ================
