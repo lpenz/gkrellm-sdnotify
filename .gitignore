@@ -1,0 +1,12 @@
+/libgkrellm-sdnotify.so
+/CMakeCache.txt
+/CMakeFiles/
+/Makefile
+/cmake_install.cmake
+/.find.txt
+/ID
+/tags
+/debian/files
+/debian/gkrellexec.debhelper.log
+/debian/gkrellexec.substvars
+/debian/gkrellexec/
