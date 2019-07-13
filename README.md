@@ -27,9 +27,11 @@ Install the following packages in Debian:
 apt-get install make cmake pkg-config gkrellm libgtk2.0-dev libsystemd-dev gcc g++
 ```
 
-Run *cmake .* and then *make* in gkrellm-sdnotify's source code directory.
+Run `cmake .` and then `make` in gkrellm-sdnotify's source code
+directory. You can also use the *Dockerfile* present in this
+repository for reference, or as a build environment.
 
-Use *make install* to install it, or copy gkrellm-sdnotify.so to
+Use `make install` to install it, or copy gkrellm-sdnotify.so to
 ``$HOME/.gkrellm2/plugins``.
 
 
