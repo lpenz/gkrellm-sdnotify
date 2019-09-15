@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/lpenz/gkrellm-sdnotify.svg?branch=master)](https://travis-ci.com/lpenz/gkrellm-sdnotify) 
+[![Github workflow](https://github.com/lpenz/gkrellm-sdnotify/workflows/CI/badge.svg)](https://github.com/lpenz/gkrellm-sdnotify/actions)
 
 gkrellm-sdnotify
 ================
