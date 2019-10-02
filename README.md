@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/lpenz/gkrellm-sdnotify.svg?branch=master)](https://travis-ci.com/lpenz/gkrellm-sdnotify) 
 [![Github workflow](https://github.com/lpenz/gkrellm-sdnotify/workflows/CI/badge.svg)](https://github.com/lpenz/gkrellm-sdnotify/actions)
+[![packagecloud](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/app/lpenz/lpenz/search?q=gkrellm-sdnotify)
 
 gkrellm-sdnotify
 ================
