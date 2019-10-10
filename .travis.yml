@@ -1,28 +1,27 @@
 ---
-dist: xenial
 language: generic
 addons: { apt: { packages: [ qemu-user-static ] } }
 env:
-  - DIST=stretch ARCH=i386
-  - DIST=stretch ARCH=amd64
-  - DIST=stretch ARCH=armhf
-install: docker pull lpenz/debian-${DIST}-${ARCH}
+  - OS=debian   DIST=buster ARCH=i386
+  - OS=debian   DIST=buster ARCH=amd64
+  - OS=debian   DIST=buster ARCH=armhf
+  - OS=raspbian DIST=buster ARCH=armhf
+install: docker pull lpenz/${OS}-${DIST}-${ARCH}
 script:
-  - docker run -d --name debian -v "$PWD/..:$PWD/.." lpenz/debian-${DIST}-${ARCH} sleep 9999999999
+  - docker run -d --name debian -v "$PWD/..:$PWD/.." "lpenz/${OS}-${DIST}-${ARCH}" sleep 9999999999
   - docker exec -t debian /bin/bash -c "apt-get update && apt-get install -y --no-install-recommends devscripts equivs git-buildpackage"
   - docker exec -t debian /bin/bash -c "mk-build-deps -i -r --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' $PWD/debian/control"
   - docker exec -t debian /bin/bash -c "cd $PWD && gbp buildpackage --git-ignore-branch -us -uc"
   - docker rm -f debian
   - sudo chown -R "$USER:$USER" ../
   - ls -l ..
-  - ping -c 5 packagecloud.io
 deploy:
   provider: packagecloud
-  repository: lpenz
   username: lpenz
+  repository: $OS
   token:
     secure: cW7wJzTAKFU2yNuDYa1JcuChfyjGrNUzP/djSbC4TiUmfbisnOhMtGQlJKBqZ+MJ7yPpJjnGKvwKbTXDAK1YdIkZN5Q7csAOACOTEN/XA6xTijviS9/NEL+Cdtva131/2OEW5IMAjk0ox9XaMtvQCtWDmzA0SGuWTEf32AuSYvo595hpYLbDVPnw7TDz3DRgZc1e3JNuK8bChBdy15YFPcnkfWW/J+XTAgiJfGNZ30kBoonbQHA1g6xhQFm+FLPc9p4fTYj8z+D3fVC0wM1D9hltkafjNtZCrq92jceTtE0hu9J+G9pY52sobwKl8dIXIDrSi5mvtgcFNhTNdkPElmQ36Ut66+fEqp3MN9kJyAZmy+gPjXBq1UpB1PwRYktf/Hb6EPdqtwqmaGT/ZoYJr7kxK8/xsVnf7//bQ4Orbvz0pQ/fisiaUd7Jc3HTlpiQrK04AXrPwyThcxh4fYGYq7YcWY0jxk0IiFQYr58joC5PTsIE0XBK+Asq6TR7ZI6RRQg1jvSW9ErXkJyA/A6Vl7qZqChHxu6fugLeQZCogWeHSuLyjNuACwaWCNGcQV18VatkjsEQa0ZyGHCN6mltiRy9S+Xl83725WZ8K0UzmXa55gvOgiXWZBK3rx7mRl996y4FVbrQO0d2Yztewlt1LDTe2WEj8WzgukD0OUy/ets=
-  dist: debian/stretch
+  dist: $OS/$DIST
   local-dir: '..'
   package_glob: '*.deb'
   on:
