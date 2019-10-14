@@ -17,6 +17,7 @@ script:
   - ls -l ..
 deploy:
   provider: packagecloud
+  edge: true
   username: lpenz
   repository: $OS
   token:
