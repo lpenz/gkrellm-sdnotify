@@ -6,6 +6,8 @@ cmake_minimum_required (VERSION 3.0)
 
 project (gkrellm-sdnotify)
 
+include(GNUInstallDirs)
+
 if(CMAKE_COMPILER_IS_GNUCXX)
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Werror -W")
 endif(CMAKE_COMPILER_IS_GNUCXX)
@@ -18,12 +20,20 @@ pkg_check_modules (SYSTEMD REQUIRED libsystemd)
 include_directories ("${GLIB_INCLUDE_DIRS}")
 include_directories ("${GTK2_INCLUDE_DIRS}")
 
-add_library (gkrellm-sdnotify
-  SHARED
-  gkrellm-sdnotify.cc)
+# Main targets
 
+add_library (gkrellm-sdnotify
+    SHARED
+    gkrellm-sdnotify.cc)
 target_link_libraries (gkrellm-sdnotify ${SYSTEMD_LIBRARIES})
 
+# Install
+
 install (TARGETS gkrellm-sdnotify
-  DESTINATION lib/gkrellm2/plugins
-  )
+    DESTINATION lib/gkrellm2/plugins
+    )
+install (
+    FILES README.md LICENSE AUTHORS
+    DESTINATION ${CMAKE_INSTALL_DOCDIR}/
+    )
+

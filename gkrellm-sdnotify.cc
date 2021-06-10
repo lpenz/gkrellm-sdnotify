@@ -7,12 +7,12 @@
  * \brief  A gkrellm plugin that calls sd_notify when loaded
  */
 
-#include <sstream>
-#include <string>
-
 #include <sys/sysinfo.h>
 #include <sys/wait.h>
 #include <systemd/sd-daemon.h>
+
+#include <sstream>
+#include <string>
 
 extern "C" {
 #include <gkrellm2/gkrellm.h>

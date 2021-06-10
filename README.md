@@ -1,11 +1,10 @@
-[![Build Status](https://travis-ci.com/lpenz/gkrellm-sdnotify.svg?branch=master)](https://travis-ci.com/lpenz/gkrellm-sdnotify) 
-[![Github workflow](https://github.com/lpenz/gkrellm-sdnotify/workflows/CI/badge.svg)](https://github.com/lpenz/gkrellm-sdnotify/actions)
+[![CI](https://github.com/lpenz/gkrellm-sdnotify/actions/workflows/ci.yml/badge.svg)](https://github.com/lpenz/gkrellm-sdnotify/actions/workflows/ci.yml)
 [![packagecloud](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/app/lpenz/lpenz/search?q=gkrellm-sdnotify)
 
 gkrellm-sdnotify
 ================
 
-## Introduction
+# Introduction
 
 **gkrellm-sdnotify** is a plugin for [gkrellm](http://gkrellm.srcbox.net/)
 that calls
@@ -19,10 +18,10 @@ start after it without using timers.
 
 
 
-## Installation
+# Installation
 
 
-### From source
+## From source
 
 Install the following packages in Debian:
 ```
@@ -37,8 +36,9 @@ Use `make install` to install it, or copy gkrellm-sdnotify.so to
 ``$HOME/.gkrellm2/plugins``.
 
 
-## Configuration
+# Configuration
 
 Enable it in gkrellm's plugin configuration.
 
 You can set up a delay in the plugin *Options* pane in gkrellm.
+
