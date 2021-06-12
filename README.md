@@ -1,5 +1,5 @@
 [![CI](https://github.com/lpenz/gkrellm-sdnotify/actions/workflows/ci.yml/badge.svg)](https://github.com/lpenz/gkrellm-sdnotify/actions/workflows/ci.yml)
-[![packagecloud](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/app/lpenz/lpenz/search?q=gkrellm-sdnotify)
+[![packagecloud](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/app/lpenz/debian/search?q=gkrellm-sdnotify)
 
 gkrellm-sdnotify
 ================
