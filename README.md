@@ -4,8 +4,6 @@
 gkrellm-sdnotify
 ================
 
-# Introduction
-
 **gkrellm-sdnotify** is a plugin for [gkrellm](http://gkrellm.srcbox.net/)
 that calls
 [systemd's](https://www.freedesktop.org/wiki/Software/systemd/)
@@ -17,11 +15,10 @@ service unit of `Type=notify`, and orchestrate other system units to
 start after it without using timers.
 
 
+## Installation
 
-# Installation
 
-
-## From source
+### From source
 
 Install the following packages in Debian:
 ```
@@ -36,7 +33,7 @@ Use `make install` to install it, or copy gkrellm-sdnotify.so to
 ``$HOME/.gkrellm2/plugins``.
 
 
-# Configuration
+## Configuration
 
 Enable it in gkrellm's plugin configuration.
 
