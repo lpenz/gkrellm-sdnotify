@@ -6,7 +6,7 @@ RUN set -e -x; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         locales \
-        make cmake pkg-config gkrellm libgtk2.0-dev libsystemd-dev gcc g++ \
+        make cmake pkg-config gkrellm libgtk2.0-dev libsystemd-dev gcc g++ git \
         gosu sudo
 
 # setup su and locale
