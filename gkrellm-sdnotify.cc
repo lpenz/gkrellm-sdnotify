@@ -77,7 +77,7 @@ static struct {
 /****************************************************************************/
 
 static void update_plugin(void) {
-    GkrellmTicks *t = gkrellm_ticks();
+    GkrellmTicks const *t = gkrellm_ticks();
 
     if (GkrSdN.sts.done || !t->second_tick) {
         return;
@@ -160,7 +160,6 @@ static void save_plugin_config(FILE *f) {
 static void load_plugin_config(gchar *arg) {
     std::istringstream ss(arg);
     std::string config;
-    std::string item;
 
     ss >> config;
     if (config == "delay") {
