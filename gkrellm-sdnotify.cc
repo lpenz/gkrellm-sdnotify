@@ -19,7 +19,7 @@ extern "C" {
 }
 
 #define PROGRAM_NAME "gkrellm-sdnotify"
-#define PROGRAM_VERSION "0.1.1"
+#define PROGRAM_VERSION "0.1.2"
 
 #define GKRELLM_SDNOTIFY_VERSION PROGRAM_VERSION
 #define PLUGIN_PLACEMENT MON_MAIL
