@@ -87,7 +87,7 @@ static void update_plugin(void) {
     if (elapsed <= GkrSdN.cfg.delay) {
         return;
     }
-    sd_notify(0, "READY=1");
+    sd_notify(1, "READY=1");
     GkrSdN.sts.done = true;
 }
 
